@@ -1,5 +1,5 @@
 import unittest
-from main import Square, Rectangle, Circle, Triangle
+from main import Square, Rectangle, Circle, Triangle, IzolesesTriangle
 
 class TestShapes(unittest.TestCase):
 
@@ -34,6 +34,17 @@ class TestShapes(unittest.TestCase):
     def test_triangle_area(self):
         triangle = Triangle({'Point1': [0, 0], 'Point2': [0, 3], 'Point3': [4, 0]})
         self.assertAlmostEqual(triangle.area(), 6, places=2)
+
+
+    def test_izoleses_triangle_side(self):
+        izoleses_triangle = IzolesesTriangle({'Side': [5]})
+        self.assertAlmostEqual(izoleses_triangle.perimeter(), 15, places=2)
+
+    def test_izoleses_triangle_different_side(self):
+        izoleses_triangle = IzolesesTriangle({'Side': [10]})
+        self.assertAlmostEqual(izoleses_triangle.perimeter(), 30, places=2)
+
+
 
 if __name__ == '__main__':
     unittest.main()

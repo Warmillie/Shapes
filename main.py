@@ -219,6 +219,22 @@ class Triangle(Shape):
         else:
             raise ValueError("Either side lengths or coordinates should be provided for Triangle")
 
+class IzolesesTriangle(Triangle):
+    def __init__(self, parts_dict: dict):
+        super().__init__({'Point1': [0, 0], 'Point2': [0, 0], 'Point3': [0, 0]})
+        self._parts = parts_dict
+        self.side_a = None
+        self.side_b = None
+        self.side_c = None
+
+        self._convert_values()
+    def _convert_values(self):
+        side: list[float] = self._parts['Side'] if "Side" in self._parts else None
+        if side is not None:
+            self.side_a = side[0]
+            self.side_b = side[0]
+            self.side_c = side[0]
+
 
 def main(input_string):
     line = input_string.strip().split('\n')[0]
