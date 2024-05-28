@@ -37,12 +37,16 @@ class TestShapes(unittest.TestCase):
 
 
     def test_izoleses_triangle_side(self):
-        izoleses_triangle = IzolesesTriangle({'Side': [5]})
+        izoleses_triangle = IzolesesTriangle({'Side': 5})
         self.assertAlmostEqual(izoleses_triangle.perimeter(), 15, places=2)
 
     def test_izoleses_triangle_different_side(self):
-        izoleses_triangle = IzolesesTriangle({'Side': [10]})
+        izoleses_triangle = IzolesesTriangle({'Side': 10})
         self.assertAlmostEqual(izoleses_triangle.perimeter(), 30, places=2)
+
+    def test_izoleses_triangle_different_side_area(self):
+        izoleses_triangle = IzolesesTriangle({'Side': 10})
+        self.assertAlmostEqual(izoleses_triangle.area(), 43.30, places=2)
 
 
 

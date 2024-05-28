@@ -229,11 +229,11 @@ class IzolesesTriangle(Triangle):
 
         self._convert_values()
     def _convert_values(self):
-        side: list[float] = self._parts['Side'] if "Side" in self._parts else None
+        side: float = self._parts['Side'] if "Side" in self._parts else None
         if side is not None:
-            self.side_a = side[0]
-            self.side_b = side[0]
-            self.side_c = side[0]
+            self.side_a = side 
+            self.side_b = side 
+            self.side_c = side 
 
 
 def main(input_string):
